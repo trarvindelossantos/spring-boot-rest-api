@@ -1,6 +1,7 @@
 package spring.test.springbootrestapi.controllers;
 
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.client.RestTemplate;
@@ -14,8 +15,10 @@ import static org.springframework.web.bind.annotation.RequestMethod.*;
 @CrossOrigin(origins = "http://10.0.16.239:3000")
 public class BudgetController {
 
+
     RestTemplate template = new RestTemplate();
-    BudgetService bService = new BudgetService();
+    @Autowired
+    BudgetService bService;
 
     /*
         POST REQUEST
